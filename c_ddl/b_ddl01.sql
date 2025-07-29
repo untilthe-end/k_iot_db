@@ -3,7 +3,7 @@
 1. 생성(CREATE)
 */
 
-create database database_name;
+CREATE DATABASE database_name;
 drop database database_name;
 # > 위 두개의 실행문은 각각 여러 번 실행할 경우 Error 발생
 
