@@ -30,7 +30,6 @@ CREATE TABLE departments (
     # > 부서의 기본키를 제외한 부서 위치, 부서장 ID가 department_id 완전 종속 o
     location varchar(50), -- 부서 위치 
     supervisor_id bigint -- 부서장 ID
-
 );
 
 DROP TABLE employees;
@@ -55,6 +54,14 @@ values
     (2, 3),
     (3, 4);
 
+# 이상태로는 괜찮아, 근데 아래 테이블처럼 합치면 위반이야
+CREATE TABLE wrong_2nf (
+    employee_id BIGINT,
+    department_id BIGINT,
+    PRIMARY KEY (employee_id, department_id)
+    -- 직원ID + 부서ID는 중복될 수 없음
+);
+
 ### 제 2정규형을 위반한 테이블 예시 ###
 # 직원과 부서의 결합 테이블 
 create table wrong_2nf (
@@ -66,12 +73,10 @@ create table wrong_2nf (
     # 직원ID + 부서ID는 중복될 수 없음
 );
 
-
- 
 # >>> 부분 종속이 발생하면 테이블을 분리하여 해결하는 것이 2NF를 지키는 방법
 # 	: 테이블을 나누어 각각 비기본 속성이 완전 종속되도록 설계 
 
-# 제2중규형 모범 사례 #
+# 제2정규형 모범 사례 #
 # 1) 1NF는 모든 테이블의 기본 요건
 # 2) 2NF는 복합키가 있는 경우에만 고려! >> 단일 기본키 테이블은 대부분 2NF 자동 만족
 
