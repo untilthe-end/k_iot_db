@@ -48,13 +48,13 @@ create table `student` (
 INSERT INTO department
 values
 	(101, '컴공', '서울'),
-	(102, '통계', '부산');
+	(102, '통계', '경기');
     
 INSERT INTO student
 values
-	(1, '최광섭', 101),
-	(2, '손태경', 101),
-    (3, '박현우', 102);
+	(1, '최고야', 101),
+	(2, '이선우', 101),
+    (3, '박미경', 102);
     
 select * from department;
 select * from student;
