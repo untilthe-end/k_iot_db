@@ -125,6 +125,8 @@ WHERE member_id = (
 	LIMIT 1
 );
 
+
+
 # >> purchases에서 회원별 구매 총액을 계산하고 가장 높은 사람 1명만 추출
 # 		: LIMIT, ORDER BY를 사용한 서브쿼리
 
